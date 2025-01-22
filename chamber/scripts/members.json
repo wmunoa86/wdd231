@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Company 1",
+        "address": "123 Main St, City, State",
+        "phone": "(123) 456-7890",
+        "website": "http://company1.com",
+        "image": "company1.jpg",
+        "membership_level": 1
+    },
+    {
+        "name": "Company 2",
+        "address": "456 Second St, City, State",
+        "phone": "(987) 654-3210",
+        "website": "http://company2.com",
+        "image": "company2.jpg",
+        "membership_level": 2
+    },
+    {
+        "name": "Company 3",
+        "address": "789 Third St, City, State",
+        "phone": "(555) 555-5555",
+        "website": "http://company3.com",
+        "image": "company3.jpg",
+        "membership_level": 3
+    },
+    {
+        "name": "Company 4",
+        "address": "101 Fourth St, City, State",
+        "phone": "(333) 333-3333",
+        "website": "http://company4.com",
+        "image": "company4.jpg",
+        "membership_level": 1
+    },
+    {
+        "name": "Company 5",
+        "address": "202 Fifth St, City, State",
+        "phone": "(444) 444-4444",
+        "website": "http://company5.com",
+        "image": "company5.jpg",
+        "membership_level": 2
+    },
+    {
+        "name": "Company 6",
+        "address": "303 Sixth St, City, State",
+        "phone": "(666) 666-6666",
+        "website": "http://company6.com",
+        "image": "company6.jpg",
+        "membership_level": 3
+    },
+    {
+        "name": "Company 7",
+        "address": "404 Seventh St, City, State",
+        "phone": "(777) 777-7777",
+        "website": "http://company7.com",
+        "image": "company7.jpg",
+        "membership_level": 1
+    }
+]
