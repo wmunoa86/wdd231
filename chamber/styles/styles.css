@@ -98,7 +98,7 @@ footer {
 #members-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1 rem;
+    gap: 1rem;
 }
 
 .member-card {
