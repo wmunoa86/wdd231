@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/join.css">
+    <script defer src="scripts/join.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/chamber_commerce_logo.png" alt="Tuxtla Gutierrez Chamber of Commerce Home Page">
+            <h1>Tuxtla Gutierrez Chamber of Commerce</h1>
+        </div>
+        
+        <nav>
+            <button class="hamburger">&#9776;</button>
+            <ul class="nav-menu">
+                <li><a href="#" data-filter="all">Home</a></li>
+                <li><a href="#" data-filter="old">Old</a></li>
+                <li><a href="#" data-filter="new">New</a></li>
+                <li><a href="#" data-filter="large">Large</a></li>
+                <li><a href="#" data-filter="small">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="form-container">
+            <h2>Membership Application</h2>
+            <form action="thankyou.html" method="get">
+                <label>First Name:
+                    <input type="text" name="first-name" required autocomplete="given-name" title="Enter your first name">
+                </label>
+                <label>Last Name:
+                    <input type="text" name="last-name" required autocomplete="family-name" title="Enter your last name">
+                </label>
+                <label>Organizational Title:
+                    <input type="text" name="organization-title" pattern="[A-Za-z\-\s]{7,}" autocomplete="organization-title" title="Enter your title (only letters, hyphens, spaces, min 7 chars)">
+                </label>
+                <label>Email:
+                    <input type="email" name="email" required autocomplete="email" title="Enter your email" placeholder="example@email.com">
+                </label>
+                <label>Mobile Phone:
+                    <input type="tel" name="mobile-phone" required autocomplete="tel" title="Enter your mobile phone number">
+                </label>
+                <label>Business/Organization Name:
+                    <input type="text" name="organization" required autocomplete="organization" title="Enter your business name">
+                </label>
+                <label>Membership Level:
+                    <select name="membership-level" required>
+                        <option value="NP">Non-Profit Membership (Free)</option>
+                        <option value="Bronze">Bronze Membership</option>
+                        <option value="Silver">Silver Membership</option>
+                        <option value="Gold">Gold Membership</option>
+                    </select>
+                </label>
+                <label>Business Description:
+                    <textarea name="business-description" title="Describe your business"></textarea>
+                </label>
+                <input type="hidden" name="timestamp" id="timestamp">
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+
+        <section class="membership-cards">
+            <div class="card">
+                <h3>Non-Profit Membership</h3>
+                <p>No fees. Ideal for non-profits.</p>
+                <a href="#" data-modal="np-modal">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>Bronze Membership</h3>
+                <p>Basic membership benefits.</p>
+                <a href="#" data-modal="bronze-modal">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>Silver Membership</h3>
+                <p>Enhanced benefits and promotions.</p>
+                <a href="#" data-modal="silver-modal">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>Gold Membership</h3>
+                <p>Exclusive premium benefits.</p>
+                <a href="#" data-modal="gold-modal">Learn More</a>
+            </div>
+            
+        </section>
+    </main>
+
+    <div id="np-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('np-modal')">&times;</span>
+            <h2>Non-Profit Membership Benefits</h2>
+            <p>No fees. Ideal for non-profit organizations.</p>
+        </div>
+    </div>
+    <div id="bronze-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bronze-modal')">&times;</span>
+            <h2>Bronze Membership Benefits</h2>
+            <p>Includes basic networking and events.</p>
+        </div>
+    </div>
+    <div id="silver-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('silver-modal')">&times;</span>
+            <h2>Silver Membership Benefits</h2>
+            <p>Expanded promotions and networking.</p>
+        </div>
+    </div>
+    <div id="gold-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('gold-modal')">&times;</span>
+            <h2>Gold Membership Benefits</h2>
+            <p>Premium marketing and advertising perks.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="info1">
+            <p>Tuxtla Gutierrez Chamber of Commerce</p>
+            <p>Tuxtla Gutierrez, Chiapas Mexico</p>
+            <p>Email: info@tgzcc.org | Phone: (503) 123-4567</p>
+        </div>
+
+        <div class="social-media">
+            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+        </div>
+
+        <div class="info2">
+            <p>WDD231 Class Project | Walter Muñoa Sosa</p>
+            <p>&copy; <span id="year"></span> Tuxtla Gutierrez Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+</html>
