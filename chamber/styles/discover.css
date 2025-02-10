@@ -1,0 +1,217 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #293241;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+}
+
+.logo h1 {
+    font-size: 1rem;
+    padding-left: 15px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+nav .hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    background-color: #293241;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+nav ul.active {
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: yellow;
+    padding: 0.5rem;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #6A1B9A;
+    border-radius: 5px;
+}
+
+.sidebar{
+    text-align: center;
+    background-color: #555;
+    color: white;
+}
+
+/* Card Styling */
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-left: 5px solid #293241; /* Accent color */
+    width: 80%;
+    margin: 10px auto;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Image */
+.card figure {
+    margin: 0;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    filter: brightness(90%);
+}
+
+/* Card Title */
+.card h2 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+    color: #293241;
+}
+
+/* Address Styling */
+.card address {
+    font-style: normal;
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Button */
+.card button {
+    background: #6A1B9A; /* Purple Accent */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.card button:hover {
+    background: #501b70; /* Darker shade */
+}
+
+/* Responsive Grid */
+@media (min-width: 768px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #293241;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .social-media img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    nav .hamburger {
+        display: none;
+    }
+
+    nav ul {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background-color: transparent;
+        margin-left: auto;
+    }
+
+    nav ul li a {
+        padding: 0.5rem 1rem;
+        color: aliceblue;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover interesting places in Tuxtla Gutiérrez">
+    <meta name="author" content="Walter Muñoa Sosa">
+    
+    <!-- Facebook Meta Tags -->
+    <meta property="og:title" content="Tuxtla Gutierrez Chamber of Commerce - Discover">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://alma-de-chiapas.com/wp-content/uploads/2020/02/mexico-tuxtla-gutierrez-tours-dec-2018.jpg">
+    <meta property="og:url" content="https://wmunoa86.github.io/wdd231/chamber/discover.html">
+
+    <title>Discover - Chamber of Commerce</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/discover.css">
+    <script defer src="scripts/discover.js"></script>
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo">
+            <img src="images/chamber_commerce_logo.png" alt="Tuxtla Gutierrez Chamber of Commerce">
+            <h1>Discover Tuxtla Gutiérrez</h1>
+        </div>
+        
+        <nav>
+            <button class="hamburger">&#9776;</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="grid-container">
+        
+        <!-- Sidebar: Visitor Message -->
+        <aside class="sidebar">
+            <p id="visit-message">Loading...</p>
+        </aside>
+
+        <!-- Interest Cards Section -->
+        <section class="cards">
+            <article class="card">
+                <h2>Sumidero Canyon</h2>
+                <figure>
+                    <img src="images/sumidero_canyon.webp" alt="Sumidero Canyon">
+                </figure>
+                <address>Chiapas, Mexico</address>
+                <p>Explore breathtaking cliffs and a winding river on a boat tour.</p>
+                <button>Learn More</button>
+            </article>
+
+            <article class="card">
+                <h2>Marimba Park</h2>
+                <figure>
+                    <img src="images/marimba_park.webp" alt="Marimba Park">
+                </figure>
+                <address>Tuxtla Gutiérrez, Mexico</address>
+                <p>A lively public park featuring marimba music performances daily.</p>
+                <button>Learn More</button>
+            </article>
+
+            <article class="card">
+                <h2>ZooMAT</h2>
+                <figure>
+                    <img src="images/zoomat.webp" alt="ZooMAT">
+                </figure>
+                <address>Tuxtla Gutiérrez, Mexico</address>
+                <p>ZooMAT in Tuxtla Gutiérrez is a unique zoo showcasing Chiapas’ wildlife in a natural habitat.</p>
+                <button>Learn More</button>
+            </article>
+
+            <article class="card">
+                <h2>Copoya Christ</h2>
+                <figure>
+                    <img src="images/copoya_Christ.webp" alt="Copoya Christ">
+                </figure>
+                <address>Tuxtla Gutiérrez, Mexico</address>
+                <p>A gigantic statue of Christ with spectacular views of the city, located on Mactumactza Hill.</p>
+                <button>Learn More</button>
+            </article>
+
+            <article class="card">
+                <h2>Botanical Garden</h2>
+                <figure>
+                    <img src="images/botanic_garden.webp" alt="Botanical Garden">
+                </figure>
+                <address>Tuxtla Gutiérrez, Mexico</address>
+                <p>A quiet place with a great variety of local flora and ancient trees. Ideal for walking and learning about the biodiversity of Chiapas.</p>
+                <button>Learn More</button>
+            </article>
+
+            <article class="card">
+                <h2>San Marcos Cathedral</h2>
+                <figure>
+                    <img src="images/san_marcos_cathedral.webp" alt="San Marcos Cathedral">
+                </figure>
+                <address>Tuxtla Gutiérrez, Mexico</address>
+                <p>A beautiful temple with a tower with a carillon that rings every hour. Its architecture is an icon of the city.</p>
+                <button>Learn More</button>
+            </article>
+
+            <article class="card">
+                <h2>Sumidero Canyon Viewports</h2>
+                <figure>
+                    <img src="images/sumidero_canyon_viewports.webp" alt="Sumidero Canyon Viewports">
+                </figure>
+                <address>Tuxtla Gutiérrez, Mexico</address>
+                <p>Five viewpoints (La Ceiba, La Coyota, El Roblar, El Tepehuaje and Los Chiapa) offer impressive views of the Canyon from above.</p>
+                <button>Learn More</button>
+            </article>
+
+            <article class="card">
+                <h2>Regional Museum of Anthropology and History of Chiapas</h2>
+                <figure>
+                    <img src="images/museum_of_anthropology_and_history.webp" alt="Regional Museum of Anthropology and History of Chiapas">
+                </figure>
+                <address>Tuxtla Gutiérrez, Mexico</address>
+                <p>It exhibits archaeological pieces from pre-Hispanic cultures such as the Mayans and Zoques, as well as exhibitions on the history of Chiapas.</p>
+                <button>Learn More</button>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="info1">
+            <p>Tuxtla Gutierrez Chamber of Commerce</p>
+            <p>Tuxtla Gutierrez, Chiapas, Mexico</p>
+            <p>Email: info@tgzcc.org | Phone: (503) 123-4567</p>
+        </div>
+
+        <div class="social-media">
+            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+        </div>
+
+        <div class="info2">
+            <p>WDD231 Class Project | Walter Muñoa Sosa</p>
+            <p>&copy; <span id="year"></span> Tuxtla Gutierrez Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
