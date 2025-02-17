@@ -1,0 +1,313 @@
+/* Tours Page Styles */
+body {
+    font-family: "Open Sans", serif;
+    font-weight: 300;
+    font-variation-settings:"wdth" 100;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #04724D;
+}
+
+/* Header & Navigation */
+header {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 5rem;
+}
+
+.logo h1 {
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    flex-grow: 1;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+nav .hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    background-color: #04724D;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+nav ul.active {
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #F4A261;
+    padding: 0.5rem;
+    display: block;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    background-color: #F4A261;
+    border-radius: 5px;
+    color: #04724D;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    background: url('../images/hero_tours.jpeg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Filtro oscuro transparente */
+    z-index: 1;
+}
+
+.hero * {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido se vea sobre el filtro */
+}
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #04724D;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+}
+
+.hero span {
+    font-family: "Lobster", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    color: #F4A261;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+}
+
+.tours {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.tour {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.tour:hover {
+    transform: scale(1.05);
+}
+
+.tour img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 5px solid #F4A261;
+}
+
+.tour h3 {
+    font-size: 1.5rem;
+    color: #04724D;
+    margin: 15px 0;
+}
+
+.tour p {
+    font-size: 1rem;
+    padding: 0 15px 15px;
+    color: black;
+    font-weight: 400;
+}
+
+.tour .btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #F4A261;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-weight: 400;
+}
+
+.tour .btn:hover {
+    background-color: #F4A261;
+    color: #04724D;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    background-color: #04724D;
+    color: #F4A261;
+    text-align: center;
+    padding: 20px 0;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+footer .social-media img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+footer img {
+    width: 5rem;
+}
+
+@media (min-width: 768px) {
+    body{
+        height: 100vh;
+    }
+
+    .hero {
+        height: auto;
+    }
+
+    .hero h1{
+        margin-top: 3.5rem;
+    }
+
+    nav .hamburger {
+        display: none;
+    }
+
+    nav ul {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background-color: transparent;
+        margin-left: auto;
+    }
+
+    nav ul li a {
+        padding: 0.5rem 1rem;
+        color: aliceblue;
+    }
+    .logo img{
+        width: 6rem;
+        padding-left: 10px ;
+    }
+
+    .logo h1 {
+        margin-left: 20px;
+    }
+
+    .tours {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto 1fr;
+        gap: 10px;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        align-items: center;
+    }
+
+    footer img {
+        grid-column: 1/2;
+        margin: 0 auto;
+        width: 8rem;
+    }
+
+    .info2 {
+        grid-column: 3/4;
+        text-align: right;
+        padding-right: 20px;
+    }
+
+    .social-media {
+        grid-column: 2/3;
+    }
+}
