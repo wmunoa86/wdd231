@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My personal website for class WDD231-BYU Pathway">
+    <meta name="description" content="Explore Walter Munoa's web development journey in WDD231 at BYU-Pathway. View course assignments, projects, and professional frontend development skills">
     <meta name="author" content="Walter Munoa">
 
     <!-- CSS Styles-->
@@ -26,7 +26,7 @@
 </head>
 <body>
     <header>
-        <img src="images/logo_WalterMunoa.svg" alt="Walter Munoa Logo">
+        <img src="images/logo_waltermunoa.svg" alt="Walter Munoa Logo">
         <h1>Walter Munoa's Site WDD231</h1>
         <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
             <span></span>
@@ -36,13 +36,18 @@
     </header>
 
     <nav id="site-nav">
-        <ul class="home"><a href="#">Home</a></ul>
-        <ul class="chamberProject"><a href="chamber.html">Chamber Project</a></ul>
-        <ul class="finalProject"><a href="final.html">Final Project</a></ul>
+        <ul>
+            <li class="home"><a href="#">Home</a></li>
+            <li class="chamberProject"><a href="chamber.html">Chamber Project</a></li>
+            <li class="finalProject"><a href="final.html">Final Project</a></li>
+        </ul>
+        
     </nav>
 
     <main>
-        <h2>Home</h2>
+        <section id="homeSection">
+            <h2>Home</h2>
+        </section>
 
         <section id="aboutMe">
             <h3 class="subtitle"> About Me</h3>
@@ -51,7 +56,7 @@
 
         <section id="studentPhoto">
             <h3 class="subtitle"> Student Photo</h3>
-            <img src="images/photo_WalterMunoa.webp" alt="Student Photo">
+            <img src="images/photo_waltermunoa.webp" alt="Student Photo">
         </section>
 
         <section id="courseInfo">
@@ -69,13 +74,13 @@
     </main>
 
     <footer>
-        <section id="socialMedia">
+        <div id="socialMedia">
             <ul>
                 <li><a href="https://www.linkedin.com/in/wmunoa" target="_blank"><img src="images/social_media_logos/linkedin-square-logo.svg" alt="LinkedIn"></a></li>
                 <li><a href="https://github.com/wmunoa86" target="_blank"><img src="images/social_media_logos/github.svg" alt="GitHub"></a></li>
-                <li><a href="#" target="_blank"><img src="images/social_media_logos/x-2.svg" alt="X Social Media"></a></li>
+                <li><a href="https://x.com/wmunoa86" target="_blank"><img src="images/social_media_logos/x-2.svg" alt="X Social Media"></a></li>
             </ul>
-        </section>
+        </div>
 
         <p>© <span class="year"></span> Walter Munoa Tuxtla Gutierrez</p>
         <p class="last-modified"></p>
