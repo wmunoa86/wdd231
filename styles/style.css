@@ -24,15 +24,21 @@ header {
     margin: 0 auto;
     display: grid;
     grid-template-columns: auto 1fr auto;
+    column-gap: 1rem;;
     align-items: center;
     max-width: 1200px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
     grid-column: 2/3;
+    max-width: calc(100% - 4.5rem);
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    line-height: 1.1;
     word-wrap: break-word;
+    white-space: normal;
 }
 
 header img {
@@ -103,7 +109,11 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #415A77;
+    background-color: rgba(255,255,255,0.2);
+}
+
+nav .active {
+    background-color: rgba(0,0,0,0.8);
     color: #F4D35E;
 }
 
