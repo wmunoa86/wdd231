@@ -1,0 +1,76 @@
+{
+    "members": [
+        {
+            "id": 1,
+            "company": "Puntos Audiovisuales",
+            "phone_number": "9616131756",
+            "website": "https://www.puntosaudiovisuales.com/",
+            "image": "https://www.puntosaudiovisuales.com/images/logoHome.png",
+            "membership_level": "Gold",
+            "member_since": "2015-03-12"
+        },
+        {
+            "id": 2,
+            "company": "Papeleria Laborante",
+            "phone_number": "9611139367",
+            "website": "https://papelerialaborante.com.mx/",
+            "image": "https://0201.nccdn.net/1_2/000/000/14e/84e/logo-laborante.png#RDAMDAID69049409",
+            "membership_level": "Silver",
+            "member_since": "2018-07-22"
+        },
+        {
+            "id": 3,
+            "company": "Farrera Group",
+            "phone_number": "9612367379",
+            "website": "https://www.grupofarrera.mx/",
+            "image": "https://www.grupofarrera.mx/static/dealer-22346/logo.png",
+            "membership_level": "Bronze",
+            "member_since": "2020-11-05"
+        },
+        {
+            "id": 4,
+            "company": "Mercantil del Constructor",
+            "phone_number": "9612986547",
+            "website": "https://www.mercantil.com.mx/",
+            "image": "https://www.mercantil.com.mx/cdn/shop/files/LOGO_MC_49913056-8826-442e-b531-d7d8a7889219.png?v=1727124017&width=400",
+            "membership_level": "Gold",
+            "member_since": "2016-02-18"
+        },
+        {
+            "id": 5,
+            "company": "Praia Group",
+            "phone_number": "5553216549",
+            "website": "https://grupopraia.com/es/",
+            "image": "https://grupopraia.com/es/wp-content/uploads/2022/07/01-logo.png",
+            "membership_level": "Silver",
+            "member_since": "2019-09-30"
+        },
+        {
+            "id": 6,
+            "company": "Hang Teen",
+            "phone_number": "5556543210",
+            "website": "https://hangten.com.mx/",
+            "image": "https://hangten.com.mx/cdn/shop/files/Recurso_1.png?v=1685593231&width=330",
+            "membership_level": "Bronze",
+            "member_since": "2021-04-14"
+        },  
+        {
+            "id": 7,
+            "company": "Devlyn Glasses",
+            "phone_number": "555-789-0123",
+            "website": "https://www.devlyn.com.mx/",
+            "image": "https://devlyn.vtexassets.com/assets/vtex.file-manager-graphql/images/a28c7bf0-6049-46d2-a698-ce5973a2dbff___10cb9b08abd88f5d8733cd4d00c2215b.svg",
+            "membership_level": "Gold",
+            "member_since": "2014-12-01"
+        },
+        {
+            "id": 8,
+            "company": "Radial Tires",
+            "phone_number": "5552109876",
+            "website": "https://radialllantas.com/",
+            "image": "https://cdn.shopify.com/s/files/1/0257/8605/6753/files/Recurso_1.png?v=1721921560",
+            "membership_level": "Silver",
+            "member_since": "2017-06-25"
+        }
+    ]
+}
