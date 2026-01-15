@@ -1,0 +1,71 @@
+@media (min-width: 1020px) {
+    .hamburger {
+        display: none;
+    }
+
+    body {
+        max-width: var(--content-max);
+        margin: 0 auto;
+    }
+
+    /* give header room for the nav that will be positioned on the right */
+    header {
+        padding-right: 10rem;
+        /* adjust if you need more/less space */
+    }
+
+    /* place the nav visually inside the header (no HTML move required) */
+    nav {
+        display: flex;
+        /* ensure visible on large screens */
+        position: absolute;
+        right: 1.25rem;
+        top: 10%;
+        transform: translateY(-50%);
+        width: auto;
+        background: none;
+        border-top: none;
+        padding: 0;
+        z-index: 900;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: auto;
+        background: none;
+    }
+
+    nav a {
+        padding: .5rem .75rem;
+        display: inline-block;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        white-space: nowrap;
+        /* keep items on one line */
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    footer h2 {
+        text-align: left;
+        font-size: 1.2rem;
+    }
+
+    footer>div {
+        width: 33.3333%;
+        padding: 1rem 0;
+    }
+
+}
