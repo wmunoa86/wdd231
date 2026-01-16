@@ -35,6 +35,35 @@ document.addEventListener('DOMContentLoaded', function () {
     const ampm = hours24 >= 12 ? 'PM' : 'AM';
     lastEl.textContent = `Last Modified: ${monthName} ${dd}, ${yyyy} ${hours12}:${min} ${ampm}`;
   }
+
+  // View toggle functionality
+  const listBtn = document.getElementById('list-btn');
+  const tableBtn = document.getElementById('table-btn');
+  const cardsContainer = document.getElementById('cards');
+
+  if (listBtn && tableBtn && cardsContainer) {
+    listBtn.addEventListener('click', function () {
+      cardsContainer.classList.remove('table-view');
+      listBtn.classList.add('active');
+      tableBtn.classList.remove('active');
+      localStorage.setItem('viewMode', 'list');
+    });
+
+    tableBtn.addEventListener('click', function () {
+      cardsContainer.classList.add('table-view');
+      tableBtn.classList.add('active');
+      listBtn.classList.remove('active');
+      localStorage.setItem('viewMode', 'table');
+    });
+
+    // Restore view preference from localStorage
+    const savedView = localStorage.getItem('viewMode') || 'list';
+    if (savedView === 'table') {
+      cardsContainer.classList.add('table-view');
+      tableBtn.classList.add('active');
+      listBtn.classList.remove('active');
+    }
+  }
 });
 
 const url = "data/members.json";
