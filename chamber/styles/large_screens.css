@@ -68,4 +68,29 @@
         padding: 1rem 0;
     }
 
+    /* Hero Section - Large Screens */
+    .hero {
+        height: 400px;
+        margin-bottom: 3rem;
+    }
+
+    .hero-content {
+        padding: 3rem;
+    }
+
+    /* Content Grid - Large Screens (2 column layout) */
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Weather Section - 2 column on large screens */
+    .weather-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Carousel - Display 3 items on large screens */
+    .spotlight-item {
+        min-width: calc(33.333% - 1rem);
+    }
+
 }

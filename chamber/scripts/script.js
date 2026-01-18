@@ -111,3 +111,238 @@ const displayMembers = (members) => {
         cards.appendChild(card);
     })
 }
+
+// Carousel functionality for Business Spotlights
+const carouselUrl = "data/members.json";
+const carousel = document.getElementById('spotlightCarousel');
+const carouselDots = document.getElementById('carouselDots');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+let currentIndex = 0;
+let members = [];
+
+async function getSpotlightData() {
+    if (!carousel) return; // Exit if carousel doesn't exist (e.g., on directory page)
+    
+    try {
+        const response = await fetch(carouselUrl);
+        const data = await response.json();
+        members = data.members;
+        displaySpotlights(members);
+        setupCarouselControls();
+    } catch (error) {
+        console.error('Error loading spotlight data:', error);
+    }
+}
+
+const displaySpotlights = (spotlightMembers) => {
+    if (!carousel) return;
+    
+    carousel.innerHTML = ''; // Clear previous content
+    
+    spotlightMembers.forEach((member, index) => {
+        let item = document.createElement("article");
+        item.className = "spotlight-item";
+        
+        let image = document.createElement("img");
+        image.src = member.image;
+        image.alt = `${member.company} logo`;
+        
+        let title = document.createElement("h3");
+        title.textContent = member.company;
+        
+        let membership = document.createElement("p");
+        membership.className = "membership";
+        membership.textContent = `${member.membership_level} Member`;
+        
+        let phone = document.createElement("p");
+        phone.innerHTML = `<strong>PHONE:</strong> ${member.phone_number}`;
+        
+        let website = document.createElement("p");
+        let link = document.createElement("a");
+        link.href = member.website;
+        link.target = "_blank";
+        link.textContent = "Visit Website";
+        website.appendChild(link);
+        
+        item.appendChild(image);
+        item.appendChild(title);
+        item.appendChild(membership);
+        item.appendChild(phone);
+        item.appendChild(website);
+        
+        carousel.appendChild(item);
+    });
+    
+    // Create dots
+    if (carouselDots) {
+        carouselDots.innerHTML = '';
+        spotlightMembers.forEach((_, index) => {
+            let dot = document.createElement("span");
+            dot.className = "dot";
+            if (index === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => goToSlide(index));
+            carouselDots.appendChild(dot);
+        });
+    }
+    
+    updateCarousel();
+};
+
+const setupCarouselControls = () => {
+    if (prevBtn) prevBtn.addEventListener("click", () => prevSlide());
+    if (nextBtn) nextBtn.addEventListener("click", () => nextSlide());
+};
+
+const updateCarousel = () => {
+    if (!carousel) return;
+    
+    const offset = -currentIndex * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+    
+    // Update active dot
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+};
+
+const nextSlide = () => {
+    if (members.length === 0) return;
+    currentIndex = (currentIndex + 1) % members.length;
+    updateCarousel();
+};
+
+const prevSlide = () => {
+    if (members.length === 0) return;
+    currentIndex = (currentIndex - 1 + members.length) % members.length;
+    updateCarousel();
+};
+
+const goToSlide = (index) => {
+    currentIndex = index;
+    updateCarousel();
+};
+
+// Initialize carousel when page loads
+getSpotlightData();
+
+// Weather API functionality
+const OPENWEATHER_API_KEY = '387d59bf49f6e0e5adbfa9bf485cba08'; // Free tier API key
+const TUXTLA_LAT = 16.7558;
+const TUXTLA_LON = -93.1084;
+
+async function getWeatherData() {
+    const currentWeatherContent = document.getElementById('currentWeatherContent');
+    const forecastContent = document.getElementById('forecastContent');
+    
+    if (!currentWeatherContent || !forecastContent) return;
+    
+    try {
+        // Fetch current weather and forecast
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/forecast?lat=${TUXTLA_LAT}&lon=${TUXTLA_LON}&appid=${OPENWEATHER_API_KEY}&units=metric`
+        );
+        
+        if (!response.ok) throw new Error('Weather data fetch failed');
+        
+        const data = await response.json();
+        
+        // Display current weather
+        const currentData = data.list[0];
+        displayCurrentWeather(currentData, data.city, currentWeatherContent);
+        
+        // Display forecast
+        displayWeatherForecast(data.list, forecastContent);
+        
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+        currentWeatherContent.innerHTML = '<p>Unable to load weather data</p>';
+        forecastContent.innerHTML = '<p>Unable to load forecast</p>';
+    }
+}
+
+const displayCurrentWeather = (weatherData, cityData, container) => {
+    const temp = Math.round(weatherData.main.temp);
+    const condition = weatherData.weather[0].main;
+    const description = weatherData.weather[0].description;
+    const humidity = weatherData.main.humidity;
+    const high = Math.round(weatherData.main.temp_max);
+    const low = Math.round(weatherData.main.temp_min);
+    
+    // Calculate sunrise and sunset
+    const sunrise = new Date(cityData.sunrise * 1000);
+    const sunset = new Date(cityData.sunset * 1000);
+    const sunriseTime = formatTime(sunrise);
+    const sunsetTime = formatTime(sunset);
+    
+    // Get weather icon
+    const iconCode = weatherData.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    
+    container.innerHTML = `
+        <div class="weather-icon">
+            <img src="${iconUrl}" alt="${description}" style="width: 80px; height: 80px;">
+        </div>
+        <div class="weather-info">
+            <p class="temperature">${temp}°C</p>
+            <p class="condition">${condition}</p>
+            <p><strong>High:</strong> ${high}°C</p>
+            <p><strong>Low:</strong> ${low}°C</p>
+            <p><strong>Humidity:</strong> ${humidity}%</p>
+            <p><strong>Sunrise:</strong> ${sunriseTime}</p>
+            <p><strong>Sunset:</strong> ${sunsetTime}</p>
+        </div>
+    `;
+};
+
+const displayWeatherForecast = (forecastList, container) => {
+    const dailyForecasts = {};
+    
+    // Group forecasts by day
+    forecastList.forEach(item => {
+        const date = new Date(item.dt * 1000);
+        const dateKey = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        
+        if (!dailyForecasts[dateKey]) {
+            dailyForecasts[dateKey] = {
+                temps: [],
+                conditions: [],
+                date: date
+            };
+        }
+        
+        dailyForecasts[dateKey].temps.push(Math.round(item.main.temp_max));
+        dailyForecasts[dateKey].conditions.push(item.weather[0].main);
+    });
+    
+    // Create forecast cards for the next 3 days
+    const forecastDays = Object.entries(dailyForecasts).slice(0, 3);
+    
+    let forecastHTML = '';
+    forecastDays.forEach(([dateStr, data]) => {
+        const maxTemp = Math.max(...data.temps);
+        const condition = data.conditions[0];
+        
+        forecastHTML += `
+            <div class="forecast-day">
+                <p class="day-name">${dateStr}</p>
+                <p class="day-condition">${condition}</p>
+                <p class="day-temp"><strong>${maxTemp}°C</strong></p>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = forecastHTML;
+};
+
+const formatTime = (date) => {
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const ampm = date.getHours() >= 12 ? 'PM' : 'AM';
+    const displayHours = date.getHours() % 12 || 12;
+    return `${displayHours}:${minutes} ${ampm}`;
+};
+
+// Initialize weather when page loads
+getWeatherData();

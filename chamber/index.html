@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grow your business in Tuxtla Gutiérrez. Join the Chamber of Commerce to connect with local leaders and drive sustainable trade in the heart of Chiapas.">
+    <meta name="author" content="Walter Munoa">
+
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="images/chamber_of_commerce_logo.ico" type="image/x-icon">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Home Page - Tuxtla Gutierrez Chamber of Commerce">
+    <meta property="og:description" content="Grow your business in Tuxtla Gutiérrez. Join the Chamber of Commerce to connect with local leaders and drive sustainable trade in the heart of Chiapas.">
+    <meta property="og:image" content="https://wmunoa86.github.io/wdd231/chamber/images/chamber_of_commerce_logo.svg">
+    <meta property="og:url" content="https://waltermunoa.github.io/wdd231/chamber/directory.html">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/large_screens.css" media="screen and (min-width: 1020px)">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+
+    <!-- JavaScript File -->
+    <script src="scripts/script.js" defer></script>
+
+
+    <title>Home - Tuxtla Gutierrez Chamber of Commerce</title>
+</head>
+
+<body>
+    <header>
+        <img src="images/chamber_of_commerce_logo.svg" alt="Chamber of Commerce Logo">
+        <h1>Tuxtla Gutierrez Chamber of Commerce</h1>
+
+        <!--Hamburguer Menu for Mobile Devices-->
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <nav id="site-nav">
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="discover.html">Discover</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <img src="images/hero_image.webp" alt="Tuxtla Gutierrez cityscape">
+            <div class="hero-content">
+                <h2>Welcome to the Tuxtla Gutierrez Chamber of Commerce</h2>
+                <p>Connect with local business leaders and grow your business in Tuxtla Gutiérrez</p>
+                <a href="join.html" class="cta-button">Join Now</a>
+            </div>
+        </section>
+        <h2>Home</h2>
+        <div class="content-grid">
+            <section class="events">
+                <h2>Events</h2>
+                <div class="event-item">
+                    <h3>Annual Chamber Networking Breakfast</h3>
+                    <p><strong>Date:</strong> February 15, 2026</p>
+                    <p><strong>Time:</strong> 7:30 AM - 9:00 AM</p>
+                    <p><strong>Location:</strong> Grand Hotel Tuxtla</p>
+                </div>
+                <div class="event-item">
+                    <h3>Business Excellence Awards</h3>
+                    <p><strong>Date:</strong> March 20, 2026</p>
+                    <p><strong>Time:</strong> 6:00 PM - 9:00 PM</p>
+                    <p><strong>Location:</strong> Centro de Convenciones</p>
+                </div>
+            </section>
+
+            <div class="weather-section">
+                <section class="current-weather">
+                    <h2>Current Weather</h2>
+                    <div class="weather-content" id="currentWeatherContent">
+                        <p>Loading weather...</p>
+                    </div>
+                </section>
+
+                <section class="weather-forecast">
+                    <h2>Forecast</h2>
+                    <div class="forecast-items" id="forecastContent">
+                        <p>Loading forecast...</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="spotlights">
+            <h2>Our Members</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" aria-label="Previous business">&lt;</button>
+                <div class="spotlight-wrapper">
+                    <div class="spotlight-carousel" id="spotlightCarousel">
+                        <!-- Carousel items will be dynamically loaded here -->
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Next business">&gt;</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots">
+                <!-- Dots will be dynamically created here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="information">
+            <h2>Tuxtla Gutierrez Chamber of Commerce</h2>
+            <address>Central Nte. 225, Zona Sin Asignación de Nombre de Col 42, 29000 Tuxtla Gutiérrez, Chis.</address>
+        </div>
+
+        <div id="social_media">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/wmunoa" target="_blank"><img
+                            src="images/social_media_icons/youtube.png" alt="YouTube"></a></li>
+                <li><a href="https://github.com/wmunoa86" target="_blank"><img
+                            src="images/social_media_icons/facebook.png" alt="Facebook"></a></li>
+                <li><a href="https://x.com/wmunoa86" target="_blank"><img src="images/social_media_icons/twitter.svg"
+                            alt="X Social Media"></a></li>
+            </ul>
+        </div>
+
+        <div id="author">
+            <h4> WDD 231 Class Project</h4>
+            <p> Walter Munoa</p>
+            <p> &copy;<span class="year"></span> Tuxtla Gutierrez Chamber of Commerce</p>
+            <p class="last-modified"></p>
+        </div>
+    </footer>
+</body>
+
+</html>
