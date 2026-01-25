@@ -42,7 +42,7 @@
     }
 
     nav a {
-        padding: .5rem .75rem;
+        padding: 1rem .75rem;
         display: inline-block;
         color: var(--primary-color);
         text-decoration: none;
@@ -70,7 +70,6 @@
 
     /* Hero Section - Large Screens */
     .hero {
-        height: 400px;
         margin-bottom: 3rem;
     }
 
@@ -88,9 +87,9 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    /* Carousel - Display 3 items on large screens */
-    .spotlight-item {
-        min-width: calc(33.333% - 1rem);
+    /* Spotlights - Display 4 items on large screens */
+    .spotlight-carousel {
+        grid-template-columns: repeat(4, 1fr);
     }
 
 }

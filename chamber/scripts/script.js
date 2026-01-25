@@ -98,7 +98,7 @@ const displayMembers = (members) => {
         portrait.setAttribute("alt", `Portrait of ${member.company}`);
         portrait.setAttribute("loading", "lazy");
         portrait.setAttribute("width", "250");
-        portrait.setAttribute("height", "auto");
+        portrait.setAttribute("height", "250");
 
         card.appendChild(fullName);
         card.appendChild(phoneNumber);
@@ -113,40 +113,46 @@ const displayMembers = (members) => {
 }
 
 // Carousel functionality for Business Spotlights
-const carouselUrl = "data/members.json";
-const carousel = document.getElementById('spotlightCarousel');
-const carouselDots = document.getElementById('carouselDots');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
-let currentIndex = 0;
-let members = [];
+const spotlightUrl = "data/members.json";
+const spotlightContainer = document.getElementById('spotlightCarousel');
 
 async function getSpotlightData() {
-    if (!carousel) return; // Exit if carousel doesn't exist (e.g., on directory page)
+    if (!spotlightContainer) return; // Exit if container doesn't exist
     
     try {
-        const response = await fetch(carouselUrl);
+        const response = await fetch(spotlightUrl);
         const data = await response.json();
-        members = data.members;
-        displaySpotlights(members);
-        setupCarouselControls();
+        
+        // Filter for Gold and Silver members
+        const qualifiedMembers = data.members.filter(member => 
+            member.membership_level === 'Gold' || member.membership_level === 'Silver'
+        );
+        
+        // Shuffle and select 4 random members
+        const shuffled = qualifiedMembers.sort(() => 0.5 - Math.random());
+        const selectedMembers = shuffled.slice(0, 4);
+        
+        displaySpotlights(selectedMembers);
     } catch (error) {
         console.error('Error loading spotlight data:', error);
     }
 }
 
-const displaySpotlights = (spotlightMembers) => {
-    if (!carousel) return;
+const displaySpotlights = (members) => {
+    if (!spotlightContainer) return;
     
-    carousel.innerHTML = ''; // Clear previous content
+    spotlightContainer.innerHTML = ''; // Clear previous content
     
-    spotlightMembers.forEach((member, index) => {
+    members.forEach((member) => {
         let item = document.createElement("article");
         item.className = "spotlight-item";
         
         let image = document.createElement("img");
         image.src = member.image;
         image.alt = `${member.company} logo`;
+        image.setAttribute("loading", "lazy");
+        image.setAttribute("width", "250");
+        image.setAttribute("height", "200");
         
         let title = document.createElement("h3");
         title.textContent = member.company;
@@ -162,6 +168,7 @@ const displaySpotlights = (spotlightMembers) => {
         let link = document.createElement("a");
         link.href = member.website;
         link.target = "_blank";
+        link.setAttribute("rel", "noopener noreferrer");
         link.textContent = "Visit Website";
         website.appendChild(link);
         
@@ -171,60 +178,11 @@ const displaySpotlights = (spotlightMembers) => {
         item.appendChild(phone);
         item.appendChild(website);
         
-        carousel.appendChild(item);
-    });
-    
-    // Create dots
-    if (carouselDots) {
-        carouselDots.innerHTML = '';
-        spotlightMembers.forEach((_, index) => {
-            let dot = document.createElement("span");
-            dot.className = "dot";
-            if (index === 0) dot.classList.add("active");
-            dot.addEventListener("click", () => goToSlide(index));
-            carouselDots.appendChild(dot);
-        });
-    }
-    
-    updateCarousel();
-};
-
-const setupCarouselControls = () => {
-    if (prevBtn) prevBtn.addEventListener("click", () => prevSlide());
-    if (nextBtn) nextBtn.addEventListener("click", () => nextSlide());
-};
-
-const updateCarousel = () => {
-    if (!carousel) return;
-    
-    const offset = -currentIndex * 100;
-    carousel.style.transform = `translateX(${offset}%)`;
-    
-    // Update active dot
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
+        spotlightContainer.appendChild(item);
     });
 };
 
-const nextSlide = () => {
-    if (members.length === 0) return;
-    currentIndex = (currentIndex + 1) % members.length;
-    updateCarousel();
-};
-
-const prevSlide = () => {
-    if (members.length === 0) return;
-    currentIndex = (currentIndex - 1 + members.length) % members.length;
-    updateCarousel();
-};
-
-const goToSlide = (index) => {
-    currentIndex = index;
-    updateCarousel();
-};
-
-// Initialize carousel when page loads
+// Initialize spotlights when page loads
 getSpotlightData();
 
 // Weather API functionality
