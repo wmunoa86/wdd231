@@ -304,3 +304,82 @@ const formatTime = (date) => {
 
 // Initialize weather when page loads
 getWeatherData();
+
+
+// --- Join Page Functionality ---
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Timestamp
+    const timestampField = document.getElementById('timestamp');
+    if (timestampField) {
+        timestampField.value = new Date().toISOString();
+    }
+
+    // 2. Modals for Membership Levels
+    const modalTriggers = document.querySelectorAll('.modal-trigger');
+    const closeButtons = document.querySelectorAll('.close-modal');
+
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            const modalId = trigger.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.showModal();
+            }
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const modal = button.closest('dialog');
+            if (modal) {
+                modal.close();
+            }
+        });
+    });
+
+    // Close modal when clicking outside
+    const dialogs = document.querySelectorAll('dialog');
+    dialogs.forEach(dialog => {
+        dialog.addEventListener('click', (e) => {
+            if (e.target === dialog) {
+                dialog.close();
+            }
+        });
+    });
+
+    //Thank You Page URL Parameter Parsing
+    const submissionDetails = document.getElementById('submission-details');
+    if (submissionDetails) {
+        const params = new URLSearchParams(window.location.search);
+        
+        // Define fields to display
+        const fields = [
+            { key: 'first_name', label: 'First Name' },
+            { key: 'last_name', label: 'Last Name' },
+            { key: 'email', label: 'Email' },
+            { key: 'phone', label: 'Phone' },
+            { key: 'business_name', label: 'Business Name' },
+            { key: 'timestamp', label: 'Submission Date' }
+        ];
+
+        let html = '';
+        fields.forEach(field => {
+            let value = params.get(field.key);
+            if (value) {
+                // Formatting timestamp if needed
+                if (field.key === 'timestamp') {
+                    const date = new Date(value);
+                    value = date.toLocaleString();
+                }
+                
+                html += `<p><strong>${field.label}:</strong> ${value}</p>`;
+            }
+        });
+        
+        if (html === '') {
+            html = '<p>No details found. Please ensure you submitted the form correctly.</p>';
+        }
+
+        submissionDetails.innerHTML = html;
+    }
+});

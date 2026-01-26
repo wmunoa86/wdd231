@@ -86,4 +86,75 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Initial render: All
   applyFilter('All');
+
+  // --- Modal Logic ---
+  const courseDetailsDialog = document.getElementById('course-details');
+
+  function displayCourseDetails(course) {
+    if (!courseDetailsDialog) return;
+
+    courseDetailsDialog.innerHTML = `
+      <button id="close-modal">❌</button>
+      <h2>${course.subject} ${course.number}</h2>
+      <h3>${course.title}</h3>
+      <p><strong>Credits</strong>: ${course.credits}</p>
+      <p><strong>Certificate</strong>: ${course.certificate}</p>
+      <p>${course.description}</p>
+      <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+    `;
+    
+    courseDetailsDialog.showModal();
+
+    // Close on click of the X button
+    const closeBtn = document.getElementById('close-modal');
+    closeBtn.addEventListener('click', () => {
+      courseDetailsDialog.close();
+    });
+
+    // Optional: Close when clicking outside the modal content
+    courseDetailsDialog.addEventListener('click', (e) => {
+        if (e.target === courseDetailsDialog) {
+            courseDetailsDialog.close();
+        }
+    });
+  }
+
+  // Event delegation to listener for course card clicks
+  if (coursesListEl) {
+    coursesListEl.addEventListener('click', (e) => {
+      // Traverse up to find the card
+      const card = e.target.closest('.course-card');
+      if (card) {
+        // Find the course object from the courses array
+        // We can parse subject/number from the text or add data attributes.
+        // Let's rely on finding it in the array. 
+        // A safer way is ensuring we match the correct one.
+        // Let's assume the text content "SUBJECT NUMBER" is reliable or better, look at how we created it.
+        // createCourseCard used: ${c.subject} ${c.number} inside .course-title
+        
+        // Easier: let's re-find based on content.
+        // Or better, let's look at the aria-label or title text.
+        // In createCourseCard: <article ... aria-label="${c.subject} ${c.number} ${c.title}">
+        
+        // Let's parse the subject and number from the card's text or aria label?
+        // Actually, since we have the `courses` array in scope (from global `course_list_array.js`), 
+        // we can search it.
+        
+        // Let's extract Subject and Number from the .course-title div
+        // Format: "CSE 110: Introduction to Programming"
+        const titleText = card.querySelector('.course-title').textContent; 
+        // titleText matches: `${c.subject} ${c.number}: ${c.title}`
+        
+        // We can split by ':' to get "Subject Number"
+        const [courseCode] = titleText.split(':'); // "CSE 110"
+        const [subject, numberStr] = courseCode.split(' ');
+        const number = parseInt(numberStr, 10);
+
+        const course = courses.find(c => c.subject === subject && c.number === number);
+        if (course) {
+          displayCourseDetails(course);
+        }
+      }
+    });
+  }
 });

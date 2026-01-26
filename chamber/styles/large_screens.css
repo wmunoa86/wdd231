@@ -100,4 +100,21 @@
         margin-bottom: 1rem;
     }
 
+    /* Join Page - Large Screens */
+    .join-page-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .form-container {
+        margin-bottom: 0;
+    }
+
+    .membership-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
