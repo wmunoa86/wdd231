@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "The Golden Dreadnought",
+    "type": "Acoustic",
+    "price": 2499.99,
+    "description": "A classic dreadnought body shape with a solid spruce top and rosewood back and sides, delivering a warm, resonant tone.",
+    "image": "images/guitar1.webp"
+  },
+  {
+    "id": 2,
+    "name": "Stratosphere Custom",
+    "type": "Electric",
+    "price": 1899.5,
+    "description": "Designed for versatility, this electric guitar features a lightweight alder body and three single-coil pickups for that iconic sound.",
+    "image": "images/guitar2.webp"
+  },
+  {
+    "id": 3,
+    "name": "Vintage Vibe Tele",
+    "type": "Electric",
+    "price": 1650.0,
+    "description": "A throwback to the golden era of rock, featuring a butterscotch blonde finish and a maple neck for snappy articulation.",
+    "image": "images/guitar3.webp"
+  },
+  {
+    "id": 4,
+    "name": "Deep Hollow Jazz",
+    "type": "Hollow Body",
+    "price": 2800.0,
+    "description": "Perfect for jazz and blues, this hollow body guitar offers a rich, airy tone with a sleek sunburst finish.",
+    "image": "images/guitar4.webp"
+  },
+  {
+    "id": 5,
+    "name": "Modern Standard HSS",
+    "type": "Electric",
+    "price": 1450.75,
+    "description": "A modern workhorse with a humbucker bridge pickup for thick leads and single coils for distinct cleans.",
+    "image": "images/guitar5.webp"
+  },
+  {
+    "id": 6,
+    "name": "Midnight Special",
+    "type": "Acoustic",
+    "price": 2100.0,
+    "description": "Handcrafted with a cedar top and mahogany body, this guitar produces a mellow, intimate sound perfect for fingerstyle.",
+    "image": "images/guitar6.webp"
+  },
+  {
+    "id": 7,
+    "name": "Sunburst Les Paul",
+    "type": "Electric",
+    "price": 3200.0,
+    "description": "The definitive rock machine with a solid mahogany body and maple cap, delivering endless sustain and power.",
+    "image": "images/guitar7.webp"
+  },
+  {
+    "id": 8,
+    "name": "The Minimalist Parlor",
+    "type": "Acoustic",
+    "price": 1299.99,
+    "description": "Small body, big heart. This parlor guitar is travel-friendly without sacrificing tonality or projection.",
+    "image": "images/guitar8.webp"
+  }
+]
