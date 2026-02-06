@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - Chamber of Commerce</title>
+    <meta name="description" content="Discover interesting places and activities in the chamber area.">
+    <meta name="author" content="Walter Munoa">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/large_screens.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="scripts/script.js" defer></script>
+    <script type="module" src="scripts/discover.js"></script>
+</head>
+<body>
+    <header>
+        <img src="images/chamber_of_commerce_logo.svg" alt="Chamber of Commerce Logo">
+        <h1>Tuxtla Gutierrez Chamber of Commerce</h1>
+    
+        <!--Hamburguer Menu for Mobile Devices-->
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <nav id="site-nav">
+        <ul>
+            <li><a href="index.html"">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="discover.html" class="active">Discover</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="visit-message" class="visit-message"></div>
+        <div id="discover-grid" class="discover-grid">
+            <!-- Cards injected by JS -->
+        </div>
+        <dialog id="place-dialog">
+            <button id="close-place-dialog" class="close-modal" aria-label="Close modal">❌</button>
+            <div id="place-dialog-content"></div>
+        </dialog>
+    </main>
+    
+    <footer>
+        <div id="information">
+            <h2>Tuxtla Gutierrez Chamber of Commerce</h2>
+            <address>Central Nte. 225, Zona Sin Asignación de Nombre de Col 42, 29000 Tuxtla Gutiérrez, Chis.</address>
+        </div>
+    
+        <div id="social_media">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/wmunoa" target="_blank"><img
+                            src="images/social_media_icons/youtube.webp" alt="YouTube"></a></li>
+                <li><a href="https://github.com/wmunoa86" target="_blank"><img src="images/social_media_icons/facebook.webp"
+                            alt="Facebook"></a></li>
+                <li><a href="https://x.com/wmunoa86" target="_blank"><img src="images/social_media_icons/twitter.webp"
+                            alt="X Social Media"></a></li>
+            </ul>
+        </div>
+    
+        <div id="author">
+            <h4> WDD 231 Class Project</h4>
+            <p> Walter Munoa</p>
+            <p> &copy;<span class="year"></span> Tuxtla Gutierrez Chamber of Commerce</p>
+            <p class="last-modified"></p>
+        </div>
+    </footer>
+</body>
+</html>
