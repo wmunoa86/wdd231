@@ -4,54 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - String & Wood Guitar Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/larger.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="description" content="Get in touch with String & Wood for inquiries about our guitars or services.">
     <meta name="author" content="Walter Munoa">
 
     <meta property="og:title" content="Contact Us - String & Wood Guitar Shop">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/logo.png">
+    <meta property="og:image" content="https://wmuno86.github.io/wdd231/project/images/String&Wood.png">
     <meta property="og:url" content="https://waltermunoasosa.github.io/wdd231/project/contact.html">
     <meta property="og:description" content="Get in touch with String & Wood for inquiries about our guitars or services.">
     
     <script src="scripts/main.js" defer></script>
-    <style>
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 2rem;
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .contact-form label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        .contact-info h3 {
-            color: var(--color-roasted-maple, #d9a066);
-            margin-top: 0;
-        }
-        @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -73,14 +41,14 @@
     </header>
 
     <main>
-        <section class="container" style="padding: 4rem 1rem;">
-            <h1 style="text-align: center; color: var(--color-roasted-maple, #d9a066);">Contact Us</h1>
+        <section class="container page-section">
+            <h1 class="page-title">Contact Us</h1>
             
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Visit Our Showroom</h3>
                     <p>Experience our instruments in person. Appointments are recommended for private trials.</p>
-                    <address style="font-style: normal; line-height: 1.6;">
+                    <address class="contact-address">
                         <strong>String & Wood Guitar Shop</strong><br>
                         123 Luthier Lane<br>
                         Nashville, TN 37203<br><br>

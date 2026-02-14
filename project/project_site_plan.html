@@ -5,100 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Plan | String & Wood Guitar Shop</title>
     <!-- Using the same fonts and variables as the main site for consistency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css"> 
+    <link rel="stylesheet" href="styles/larger.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <style>
-        /* Specific overrides for the site plan readability */
-        :root {
-            /* We can reuse the main variables but ensure high contrast for the plan text if needed */
-        }
-        
-        body {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: var(--color-spruce-white); /* Light background for the document aspect */
-            color: #333; /* Dark text for readability on white */
-            font-family: var(--font-body);
-        }
-
-        /* Re-mapping main site colors for display in this document context */
-        .color-sample {
-            display: inline-block;
-            width: 100px;
-            height: 100px;
-            border: 1px solid #ccc;
-            margin-right: 1rem;
-            border-radius: 4px;
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-display);
-            color: var(--color-rosewood-brown); /* Using the dark brown for headings */
-            border-bottom: 2px solid var(--color-roasted-maple);
-            padding-bottom: 0.5rem;
-            margin-top: 2rem;
-        }
-        
-        h1 {
-            text-align: center;
-            font-size: 3rem;
-            border-bottom: none;
-        }
-
-        .section {
-            margin-bottom: 3rem;
-        }
-        
-        .color-palette {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .color-card {
-            text-align: center;
-        }
-        
-        .wireframe-img {
-            width: 100%;
-            max-width: 600px;
-            border: 1px solid #ddd;
-            display: block;
-            margin: 1rem auto;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        /* Typography examples */
-        .font-display-example {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-        }
-        
-        .font-body-example {
-            font-family: var(--font-body);
-        }
-
-    </style>
 </head>
-<body>
+<body class="site-plan-body container">
 
-    <h1>String & Wood Guitar Shop<br><span style="font-size: 1.5rem; font-weight: normal;">Site Plan</span></h1>
+    <h1 class="site-plan-h1">String & Wood Guitar Shop<br><span class="site-plan-subtitle">Site Plan</span></h1>
 
-    <div class="section">
-        <h2>Site Name</h2>
+    <div class="site-plan-section">
+        <h2 class="site-plan-h2">Site Name</h2>
         <p><strong>Site Name:</strong> String & Wood</p>
         <p><strong>Reason:</strong> This name evokes the fundamental elements of the instrument—the organic wood resonance and the metallic vibration of the strings. It suggests craftsmanship, authenticity, and a connection to the roots of music making. It sounds premium yet grounded.</p>
         <p><strong>Domain Availability:</strong> wmunoa86.github.io/wdd231/project/index.html</p>
     </div>
 
-    <div class="section">
-        <h2>Site Purpose</h2>
+    <div class="site-plan-section">
+        <h2 class="site-plan-h2">Site Purpose</h2>
         <p>The "String & Wood" website serves as a digital showroom for premium, handcrafted guitars. Its purpose is to:</p>
         <ul>
             <li>showcase a curated catalog of high-end acoustic and electric guitars with detailed specifications and high-quality imagery.</li>
@@ -107,14 +33,14 @@
         </ul>
     </div>
 
-    <div class="section">
-        <h2>Scenarios</h2>
+    <div class="site-plan-section">
+        <h2 class="site-plan-h2">Scenarios</h2>
         <p><strong>Scenario 1:</strong> A professional jazz musician is looking for a hollow-body guitar with a specific warm tone. They ask: <em>"Where can I find a high-quality hollow-body guitar that is suitable for professional jazz recording, and does it come with a detailed description of its tonal characteristics?"</em></p>
         <p><strong>Scenario 2:</strong> A beginner enthusiast wants to upgrade from their starter kit. They ask: <em>"What makes the 'Midnight Special' acoustic guitar different from the standard models, and is it a good investment for fingerstyle playing?"</em></p>
     </div>
 
-    <div class="section">
-        <h2>Color Scheme</h2>
+    <div class="site-plan-section">
+        <h2 class="site-plan-h2">Color Scheme</h2>
         <p>The color palette is inspired by the materials of lutherie: dark woods, roasted maple necks, and vintage finishes.</p>
         
         <div class="color-palette">
@@ -145,26 +71,26 @@
         </div>
     </div>
 
-    <div class="section">
-        <h2>Typography</h2>
+    <div class="site-plan-section">
+        <h2 class="site-plan-h2">Typography</h2>
         
-        <h3>Headings: Playfair Display</h3>
+        <h3 class="site-plan-h3">Headings: Playfair Display</h3>
         <p class="font-display-example">The quick brown fox jumps over the lazy dog.</p>
         <p>Selected for its elegance and classic serif style, evoking the tradition and artistry of guitar making. Used for all main headers (h1, h2, h3) and the logo.</p>
 
-        <h3>Body Text: Montserrat</h3>
+        <h3 class="site-plan-h3">Body Text: Montserrat</h3>
         <p class="font-body-example">The quick brown fox jumps over the lazy dog.</p>
         <p>A clean, geometric sans-serif that provides excellent readability and a modern touch to balance the classic headers. Used for all paragraph text, navigation links, and descriptions.</p>
     </div>
 
-    <div class="section">
-        <h2>Wireframe</h2>
+    <div class="site-plan-section">
+        <h2 class="site-plan-h2">Wireframe</h2>
         
-        <h3>Mobile View</h3>
+        <h3 class="site-plan-h3">Mobile View</h3>
         <p>The mobile view focuses on stackability and easy navigation via a hamburger menu. The hero section remains prominent.</p>
         <img src="images/wireframe_mobile.png" alt="Mobile Wireframe" class="wireframe-img">
 
-        <h3>Desktop View</h3>
+        <h3 class="site-plan-h3">Desktop View</h3>
         <p>The desktop view expands to a grid layout for the catalog, allowing users to compare models side-by-side. The navigation bar is fully visible.</p>
         <img src="images/wireframe_desktop.png" alt="Desktop Wireframe" class="wireframe-img">
     </div>

@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Guitars - String & Wood Guitar Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/larger.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="description" content="Explore our complete collection of handcrafted acoustic and electric guitars.">
     <meta name="author" content="Walter Munoa">
 
     <meta property="og:title" content="Our Guitars - String & Wood Guitar Shop">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/logo.png">
+    <meta property="og:image" content="https://wmuno86.github.io/wdd231/project/images/String&Wood.png">
     <meta property="og:url" content="https://waltermunoasosa.github.io/wdd231/project/guitars.html">
     <meta property="og:description" content="Explore our complete collection of handcrafted acoustic and electric guitars.">
     
@@ -37,11 +41,11 @@
     </header>
 
     <main>
-        <section class="container" style="padding: 4rem 1rem;">
-            <h1 style="text-align: center; margin-bottom: 2rem; color: var(--color-roasted-maple, #d9a066);">Our Collection</h1>
+        <section class="container page-section">
+            <h1 class="page-title mb-2">Our Collection</h1>
             <div id="all-guitars-list" class="guitar-grid">
                 <!-- Javascript will insert all guitars here -->
-                <p style="text-align: center; grid-column: 1/-1;">Loading collection...</p>
+                <p class="loading-msg text-center" style="grid-column: 1/-1;">Loading collection...</p>
             </div>
         </section>
     </main>
