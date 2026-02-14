@@ -113,4 +113,29 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = 'auto';
         }
     });
+
+    // Handle Form Submission on thanks.html
+    const submissionDetails = document.getElementById('submission-details');
+    if (submissionDetails) {
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const email = params.get('email');
+        const message = params.get('message');
+
+        if (name && email) {
+            submissionDetails.innerHTML = `
+                <h2 style="color: var(--color-roasted-maple); width: 100%; text-align: center; margin-bottom: 1.5rem;">Thank You!</h2>
+                <p style="margin-bottom: 1rem;">We have received your message with the following details:</p>
+                <div style="background: #f9f9f9; padding: 1rem; border-radius: 4px; width: 100%; border: 1px solid #eee;">
+                    <p style="margin-bottom: 0.5rem;"><strong>Name:</strong> ${name}</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Email:</strong> ${email}</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Message:</strong></p>
+                    <p style="font-style: italic; color: #555;">${message || 'No message provided.'}</p>
+                </div>
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666; width: 100%; text-align: center;">We will get back to you shortly.</p>
+            `;
+        } else {
+            submissionDetails.innerHTML = '<p class="text-center" style="width: 100%;">No submission data found. Please fill out the <a href="contact.html" style="color: var(--color-roasted-maple);">contact form</a>.</p>';
+        }
+    }
 });
