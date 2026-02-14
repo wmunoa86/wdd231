@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburgerBtn.classList.toggle('active');
     });
 
-    // Display Guitars on Index Page
+    // Display Guitars
     const guitarList = document.getElementById('guitar-list');
+    const allGuitarsList = document.getElementById('all-guitars-list');
     
-    if (guitarList) {
+    if (guitarList || allGuitarsList) {
         // Use relative path 'data/guitars.json' which works when serving from 'project/' root
         fetch('data/guitars.json')
             .then(response => {
@@ -23,41 +24,51 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(data => {
-                // Shuffle array
-                const shuffled = data.sort(() => 0.5 - Math.random());
-                // Get first 3
-                const selected = shuffled.slice(0, 3);
-                
-                // Clear loading state if any
-                guitarList.innerHTML = '';
+                // Function to render cards
+                const renderGuitars = (items, container) => {
+                    container.innerHTML = '';
+                    items.forEach(guitar => {
+                        const card = document.createElement('div');
+                        card.classList.add('guitar-card');
+                        
+                        card.innerHTML = `
+                            <img src="${guitar.image}" alt="${guitar.name}" loading="lazy">
+                            <div class="card-content">
+                                <h3>${guitar.name}</h3>
+                                <div class="type">${guitar.type}</div>
+                                <div class="description">${guitar.description}</div>
+                                <div class="price">$${guitar.price.toLocaleString()}</div>
+                                <button class="btn view-details-btn">View Details</button>
+                            </div>
+                        `;
+                        
+                        // Add Click Event for Modal
+                        card.querySelector('.view-details-btn').addEventListener('click', (e) => {
+                            e.preventDefault(); // Prevent default if it was a link, standardized for button too
+                            openModal(guitar);
+                        });
 
-                selected.forEach(guitar => {
-                    const card = document.createElement('div');
-                    card.classList.add('guitar-card');
-                    
-                    card.innerHTML = `
-                        <img src="${guitar.image}" alt="${guitar.name}" loading="lazy">
-                        <div class="card-content">
-                            <h3>${guitar.name}</h3>
-                            <div class="type">${guitar.type}</div>
-                            <div class="description">${guitar.description}</div>
-                            <div class="price">$${guitar.price.toLocaleString()}</div>
-                            <button class="btn view-details-btn">View Details</button>
-                        </div>
-                    `;
-                    
-                    // Add Click Event for Modal
-                    card.querySelector('.view-details-btn').addEventListener('click', (e) => {
-                        e.preventDefault(); // Prevent default if it was a link, standardized for button too
-                        openModal(guitar);
+                        container.appendChild(card);
                     });
+                };
 
-                    guitarList.appendChild(card);
-                });
+                // Index Page: Random 3
+                if (guitarList) {
+                    const shuffled = [...data].sort(() => 0.5 - Math.random());
+                    const selected = shuffled.slice(0, 3);
+                    renderGuitars(selected, guitarList);
+                }
+
+                // Guitars Page: All
+                if (allGuitarsList) {
+                    renderGuitars(data, allGuitarsList);
+                }
             })
             .catch(error => {
                 console.error('Error loading guitars:', error);
-                guitarList.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Unable to load catalog at this time.</p>';
+                const errorMsg = '<p style="grid-column: 1/-1; text-align: center;">Unable to load catalog at this time.</p>';
+                if (guitarList) guitarList.innerHTML = errorMsg;
+                if (allGuitarsList) allGuitarsList.innerHTML = errorMsg;
             });
     }
 

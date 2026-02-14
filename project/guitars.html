@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>String & Wood Guitar Shop</title>
+    <title>Our Guitars - String & Wood Guitar Shop</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <meta name="description" content="String & Wood Guitar Shop - High-end handcrafted guitars for demanding musicians.">
+    <meta name="description" content="Explore our complete collection of handcrafted acoustic and electric guitars.">
     <meta name="author" content="Walter Munoa">
 
-    <meta property="og:title" content="String & Wood Guitar Shop">
+    <meta property="og:title" content="Our Guitars - String & Wood Guitar Shop">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/logo.png">
-    <meta property="og:url" content="https://waltermunoasosa.github.io/wdd231/project/index.html">
-    <meta property="og:description" content="String & Wood Guitar Shop - High-end handcrafted guitars for demanding musicians.">
+    <meta property="og:url" content="https://waltermunoasosa.github.io/wdd231/project/guitars.html">
+    <meta property="og:description" content="Explore our complete collection of handcrafted acoustic and electric guitars.">
     
     <script src="scripts/main.js" defer></script>
 </head>
@@ -35,21 +35,12 @@
         </div>
     </header>
 
-
     <main>
-        <section class="hero">
-            <img src="images/logo.png" alt="String & Wood Logo" class="logo-img">
-            <h1>Craftsmanship in Every Note</h1>
-            <p>Discover our exclusive collection of guitars crafted with the finest woods and unmatched attention to detail.</p>
-            <a href="#" class="btn">Explore Catalog</a>
-        </section>
-
-        <!-- Placeholder for Featured Section -->
-        <section class="container" style="padding: 4rem 1rem; text-align: center;">
-            <h2 style="color: var(--color-roasted-maple);">Our Exclusive Series</h2>
-            <!-- Guitar Grid -->
-            <div id="guitar-list" class="guitar-grid">
-                <!-- Javascript will insert guitars here -->
+        <section class="container" style="padding: 4rem 1rem;">
+            <h1 style="text-align: center; margin-bottom: 2rem; color: var(--color-roasted-maple, #d9a066);">Our Collection</h1>
+            <div id="all-guitars-list" class="guitar-grid">
+                <!-- Javascript will insert all guitars here -->
+                <p style="text-align: center; grid-column: 1/-1;">Loading collection...</p>
             </div>
         </section>
     </main>
@@ -58,7 +49,7 @@
         <div class="container footer-content">
             <h3>String & Wood Guitar Shop</h3>
             <div class="footer-links">
-                <a href="#">Maintenance</a>
+                <a href="services.html">Maintenance</a>
                 <a href="#">About Us</a>
                 <a href="#">Privacy Policy</a>
             </div>
@@ -67,13 +58,6 @@
     </footer>
 
     <!-- Guitar Details Modal -->
-    <div id="guitar-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div id="modal-body">
-                <!-- Content injected via JS -->
-            </div>
-        </div>
-    </div> 
+    <div id="guitar-modal" class="modal"><div class="modal-content"><span class="close-btn">&times;</span><div id="modal-body"></div></div></div> 
 </body>
 </html>

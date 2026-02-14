@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - String & Wood Guitar Shop</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="description" content="Get in touch with String & Wood for inquiries about our guitars or services.">
+    <meta name="author" content="Walter Munoa">
+
+    <meta property="og:title" content="Contact Us - String & Wood Guitar Shop">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://waltermunoasosa.github.io/wdd231/project/contact.html">
+    <meta property="og:description" content="Get in touch with String & Wood for inquiries about our guitars or services.">
+    
+    <script src="scripts/main.js" defer></script>
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .contact-info h3 {
+            color: var(--color-roasted-maple, #d9a066);
+            margin-top: 0;
+        }
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo-text">String & Wood</a>
+            <button id="hamburger-btn" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="guitars.html">Guitars</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container" style="padding: 4rem 1rem;">
+            <h1 style="text-align: center; color: var(--color-roasted-maple, #d9a066);">Contact Us</h1>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Visit Our Showroom</h3>
+                    <p>Experience our instruments in person. Appointments are recommended for private trials.</p>
+                    <address style="font-style: normal; line-height: 1.6;">
+                        <strong>String & Wood Guitar Shop</strong><br>
+                        123 Luthier Lane<br>
+                        Nashville, TN 37203<br><br>
+                        <a href="mailto:info@stringandwood.com">info@stringandwood.com</a><br>
+                        (555) 123-4567
+                    </address>
+                </div>
+                
+                <form class="contact-form" action="#" method="get">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <h3>String & Wood Guitar Shop</h3>
+            <div class="footer-links">
+                <a href="services.html">Maintenance</a>
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <p class="copyright">&copy; 2026 String & Wood Guitar Shop. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

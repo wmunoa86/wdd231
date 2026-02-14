@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - String & Wood Guitar Shop</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="description" content="Expert luthier services including restringing, setups, and repairs.">
+    <meta name="author" content="Walter Munoa">
+
+    <meta property="og:title" content="Services - String & Wood Guitar Shop">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://waltermunoasosa.github.io/wdd231/project/services.html">
+    <meta property="og:description" content="Expert luthier services including restringing, setups, and repairs.">
+    
+    <script src="scripts/main.js" defer></script>
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--color-roasted-maple, #d9a066);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .service-card h3 {
+            color: var(--color-roasted-maple, #d9a066);
+            margin-top: 0;
+        }
+        .service-price {
+            font-weight: bold;
+            color: var(--color-roasted-maple, #d9a066);
+            margin-top: 1rem;
+            display: block;
+        }
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+            object-fit: contain;
+        }
+        .service-subtitle {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo-text">String & Wood</a>
+            <button id="hamburger-btn" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="guitars.html">Guitars</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container" style="padding: 4rem 1rem;">
+            <h1 style="text-align: center; color: var(--color-roasted-maple, #d9a066);">Expert Luthier Services</h1>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">Keep your instrument playing its best with our professional maintenance and repair services.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="images/cleaning_services_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Restringing Icon" class="service-icon">
+                    <h3>Restringing & Cleaning</h3>
+                    <div class="service-subtitle">Basic Maintenance</div>
+                    <p>Removal of old strings, fretboard cleaning and conditioning, body polish, and installation of new strings (strings sold separately).</p>
+                    <span class="service-price">Starting at $25</span>
+                    <a href="contact.html" class="btn" style="margin-top: 1rem;">Contact</a>
+                </div>
+                <div class="service-card">
+                    <img src="images/dashboard_customize_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Setup Icon" class="service-icon">
+                    <h3>Professional Setup</h3>
+                    <div class="service-subtitle">Optimize Playability</div>
+                    <p>Includes truss rod adjustment, bridge height adjustment, nut slot optimization, intonation, and pickup height adjustment for optimal playability.</p>
+                    <span class="service-price">Starting at $75</span>
+                    <a href="contact.html" class="btn" style="margin-top: 1rem;">Contact</a>
+                </div>
+                <div class="service-card">
+                    <img src="images/handyman_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Fretwork Icon" class="service-icon">
+                    <h3>Fretwork</h3>
+                    <div class="service-subtitle">Precision Leveling</div>
+                    <p>Leveling, crowning, and polishing of frets to eliminate buzz and dead spots. Includes a full professional setup.</p>
+                    <span class="service-price">Starting at $150</span>
+                    <a href="contact.html" class="btn" style="margin-top: 1rem;">Contact</a>
+                </div>
+                <div class="service-card">
+                    <img src="images/reviews_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Electronics Icon" class="service-icon">
+                    <h3>Electronics Repair</h3>
+                    <div class="service-subtitle">Wiring & Pickups</div>
+                    <p>Diagnosis and repair of wiring issues, pickup installation, pot replacement, and shielding to reduce noise.</p>
+                    <span class="service-price">Starting at $45</span>
+                    <a href="contact.html" class="btn" style="margin-top: 1rem;">Contact</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <h3>String & Wood Guitar Shop</h3>
+            <div class="footer-links">
+                <a href="services.html">Maintenance</a>
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <p class="copyright">&copy; 2026 String & Wood Guitar Shop. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
